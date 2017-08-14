@@ -58,11 +58,13 @@ describe('实现一个基类，可以继承，可以监听事件', function () {
     })
 
     it('可以extend多次', function () {
+      console.log('before Base.extend')
       var A = Base.extend({
         say: function (word) {
           return word
         }
       })
+      console.log('before A.extend')
       var B = A.extend()
       var b = new B
       assert.equal(b.say('hello world'), 'hello world')
